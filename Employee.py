@@ -1,3 +1,6 @@
+#Git hub link : https://github.com/10623848/B9CY100_10623848_CA_1.git
+# Since it was a small project, I used 
+
 class Employee :
     
     #Constructor of the class
@@ -29,13 +32,17 @@ class Employee :
     
     def computeTax(self,grossPay) :
     
-        #
-        return abs(0.4*grossPay - self.weeklytaxcredit)
+        afterTax = 0.4 * grossPay
+        netPayAfterTax = afterTax - self.weeklytaxcredit
+        
+        if netPayAfterTax > 0 :
+            return netPayAfterTax
+        else : return 0
         
         
     
-
-emp = Employee('Saqlain', 35, 11, 15, 70)
+#Implementing Employe class and calculating taxes
+emp = Employee('Saqlain', 35, 11, 15, 445)
 grossSalary = emp.computeWeeklyPay(39)
 netSalary = emp.computeTax(grossSalary)
 print(emp.name, 'Gross Pay : ', grossSalary, '\n\t', 'Net Pay : ', netSalary)
