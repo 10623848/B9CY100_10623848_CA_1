@@ -1,11 +1,6 @@
 class Employee :
-
-    #name = ''
-    #weeklyhours = 0
-    #rate = 0
-    #overtimeRate = 0
-    #weeklytaxcredit = 0
     
+    #Constructor of the class
     def __init__(self, name, weeklyhours, rate, overtimeRate, weeklytaxcredit) :
     
         self.name = name
@@ -14,15 +9,18 @@ class Employee :
         self.overtimeRate = overtimeRate
         self.weeklytaxcredit = weeklytaxcredit
         
+     
     def computeWeeklyPay (self,hours) :
         overtimeHours = 0
         weeklyToPayHours = 0
         
+        # Overtime calculation
         if hours > self.weeklyhours :
             overtimeHours = hours - self.weeklyhours
             weeklyToPayHours = self.weeklyhours
         else : weeklyToPayHours = hours
         
+        #Calculating rates based on working hours
         weeklyPay = weeklyToPayHours * self.rate
         overTimePay = self.overtimeRate * overtimeHours
         
@@ -31,6 +29,7 @@ class Employee :
     
     def computeTax(self,grossPay) :
     
+        #
         return abs(0.4*grossPay - self.weeklytaxcredit)
         
         
